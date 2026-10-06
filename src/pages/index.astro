@@ -1,0 +1,84 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Arrow from '../components/Arrow.astro';
+import Spark from '../components/Spark.astro';
+import { company, emailLink } from '../data/company';
+---
+
+<Layout title={`${company.brandName} — Software Development Consultancy`}>
+  <section class="hero container" aria-labelledby="hero-title">
+    <div class="hero-decoration hero-decoration--blue" aria-hidden="true">{`{ }`}</div>
+    <Spark class="hero-spark" />
+    <p class="eyebrow hero-eyebrow">Software development & consultancy</p>
+    <h1 id="hero-title">Software,<br /><span class="highlight highlight--purple">thoughtfully</span> built.</h1>
+    <div class="hero-description">
+      <p>{company.description}</p>
+      <div class="hero-actions">
+        <a class="button button--blue" href="#contact">Get in touch <Arrow /></a>
+      </div>
+    </div>
+    <div class="hero-baseline">
+      <span>Good ideas. Care in the details.</span>
+      <a href="#services">See what we do <Arrow direction="down" /></a>
+    </div>
+  </section>
+
+  <section id="services" class="services section container" aria-labelledby="services-title">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow section-label"><span>01</span> What we do</p>
+        <h2 id="services-title">From idea<br />to <span class="highlight highlight--blue">software.</span></h2>
+      </div>
+      <p class="section-intro">Thoughtful development and clear technical guidance, built around your business.</p>
+    </div>
+    <div class="services-grid">
+      <article class="service">
+        <div class="service-topline">
+          <span class="service-tag service-tag--blue">01 / Build</span>
+          <span class="service-symbol" aria-hidden="true">↗</span>
+        </div>
+        <h3>Custom software<br />development</h3>
+        <p>Turn an idea or a business need into useful software. We help you build new solutions and improve the ones you already have.</p>
+      </article>
+      <article class="service">
+        <div class="service-topline">
+          <span class="service-tag service-tag--purple">02 / Think</span>
+          <span class="service-symbol service-symbol--purple" aria-hidden="true">✳</span>
+        </div>
+        <h3>Technical<br />consultancy</h3>
+        <p>Make sense of your technical options. Get practical guidance on your software, its architecture, and the right next steps.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="about" class="about section container" aria-labelledby="about-title">
+    <div class="about-heading">
+      <p class="eyebrow section-label"><span>02</span> About Natscale</p>
+      <h2 id="about-title">Clear thinking.<br />Careful <span class="about-word">building.<Spark class="about-spark" /></span></h2>
+    </div>
+    <div class="about-content">
+      <p class="about-description">We’re {company.legalName}, a software development consultancy based in {company.location}. We love turning ideas into useful software and care about getting the details right, from the first decisions to the finishing touches.</p>
+      <dl class="company-details">
+        <div><dt>Company</dt><dd>{company.legalName}</dd></div>
+        <div><dt>Based in</dt><dd>{company.location}</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="contact" class="contact" aria-labelledby="contact-title">
+    <div class="contact-inner container">
+      <div>
+        <p class="eyebrow section-label"><span>03</span> Get in touch</p>
+        <h2 id="contact-title">Have something<br />in mind?</h2>
+      </div>
+      <div class="contact-content">
+        <p>For project enquiries or help with Natscale software, drop us a line.</p>
+        <a class="contact-email" href={emailLink('Natscale enquiry')}>
+          <span>{company.email}</span><Arrow />
+        </a>
+        <p class="contact-location">{company.legalName} <span aria-hidden="true">·</span> {company.location}</p>
+      </div>
+      <Spark class="contact-spark" />
+    </div>
+  </section>
+</Layout>

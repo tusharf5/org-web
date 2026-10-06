@@ -1,0 +1,20 @@
+---
+import { company, emailLink } from '../data/company';
+import Spark from './Spark.astro';
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer container">
+  <div class="footer-company">
+    <a class="wordmark wordmark--footer" href="/" aria-label={`${company.brandName} home`}>
+      <Spark class="brand-spark" />
+      <span>{company.brandName}</span>
+    </a>
+    <p>© {year} {company.legalName}</p>
+  </div>
+  <address class="footer-contact">
+    <span>{company.location}</span>
+    <a href={emailLink()}>{company.email}</a>
+  </address>
+  <a class="footer-support" href="/support/">Support ↗</a>
+</footer>

@@ -1,0 +1,21 @@
+---
+import { company } from '../data/company';
+import Spark from './Spark.astro';
+import Arrow from './Arrow.astro';
+
+const isSupport = Astro.url.pathname === '/support/';
+const homeSection = (id: string) => isSupport ? `/#${id}` : `#${id}`;
+---
+
+<header class="site-header container">
+  <a class="wordmark" href="/" aria-label={`${company.brandName} home`}>
+    <Spark class="brand-spark" />
+    <span>{company.brandName}</span>
+  </a>
+  <nav class="main-nav" aria-label="Main navigation">
+    <a href={homeSection('services')}>Services</a>
+    <a href={homeSection('about')}>About</a>
+    <a href="/support/" aria-current={isSupport ? 'page' : undefined}>Support</a>
+    <a class="nav-contact" href={homeSection('contact')}>Contact <Arrow /></a>
+  </nav>
+</header>

@@ -1,0 +1,51 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Arrow from '../components/Arrow.astro';
+import Spark from '../components/Spark.astro';
+import { company, emailLink } from '../data/company';
+---
+
+<Layout
+  title={`Support — ${company.legalName}`}
+  description={`Contact ${company.legalName} for software support. Email ${company.email} with your software name, issue, and device or version details.`}
+>
+  <div class="support-page container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">Support</span>
+    </nav>
+    <section class="support-hero" aria-labelledby="support-title">
+      <Spark class="support-spark" />
+      <p class="eyebrow">Natscale software support</p>
+      <h1 id="support-title">Need a <span class="highlight highlight--purple">hand?</span></h1>
+      <p class="support-description">For help with software from {company.legalName}, email us with a few details about what’s happening.</p>
+      <a class="support-email" href={emailLink('Natscale support request')}>{company.email}</a>
+      <a class="button button--blue support-button" href={emailLink('Natscale support request')}>Email support <Arrow /></a>
+    </section>
+
+    <section class="support-guidance" aria-labelledby="guidance-title">
+      <div class="support-guidance-heading">
+        <p class="eyebrow">A good place to start</p>
+        <h2 id="guidance-title">A few details<br />go a long way.</h2>
+        <p>Include these in your email so we can understand the issue.</p>
+      </div>
+      <ol class="support-steps">
+        <li>
+          <span class="step-number step-number--blue" aria-hidden="true">01</span>
+          <div><h3>The software</h3><p>The name of the software you’re using, and its version if you know it.</p></div>
+        </li>
+        <li>
+          <span class="step-number step-number--purple" aria-hidden="true">02</span>
+          <div><h3>What happened</h3><p>Describe the issue, what you expected, and the steps that led to it.</p></div>
+        </li>
+        <li>
+          <span class="step-number step-number--yellow" aria-hidden="true">03</span>
+          <div><h3>Your setup</h3><p>Your device and operating system, along with any relevant version details.</p></div>
+        </li>
+      </ol>
+    </section>
+    <div class="support-bottom">
+      <p>Have a project in mind instead?</p>
+      <a class="text-link" href="/#contact">Get in touch <Arrow /></a>
+    </div>
+  </div>
+</Layout>
