@@ -1,0 +1,42 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { company, emailLink } from '../../data/company';
+---
+
+<Layout
+  title={`Just Notes Support — ${company.legalName}`}
+  description="Help for Just Notes, the menu-bar scratchpad for Mac: finding your notes, restoring purchases, and iCloud sync."
+>
+  <div class="doc-page container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">Just Notes</span>
+    </nav>
+    <article class="doc">
+      <p class="eyebrow">Just Notes for Mac</p>
+      <h1>Just Notes Support</h1>
+      <p>
+        Just Notes is a menu-bar scratchpad for macOS 14 and later. Click its rounded-square N icon in the menu bar or press Control–Option–N to show it.
+      </p>
+
+      <h2>Common questions</h2>
+      <dl class="faq">
+        <dt>Where are my notes?</dt>
+        <dd>Choose Settings &gt; Data &gt; Reveal Data Folder. Quit Just Notes before making a manual backup so SQLite write-ahead logs are included.</dd>
+        <dt>How do I restore the lifetime unlock?</dt>
+        <dd>Open Settings, choose Upgrade, then choose Restore Purchases. Use the same App Store account that made the purchase.</dd>
+        <dt>Does the free tier expire?</dt>
+        <dd>No. Pad 1 and its local editing, autosave, recovery, formatting, images, find, statistics, import, and current-pad export remain available.</dd>
+        <dt>How do I enable iCloud?</dt>
+        <dd>After unlocking, open Settings &gt; Data and turn on Sync with iCloud. Sync is always opt-in.</dd>
+        <dt>What happens after a refund?</dt>
+        <dd>Premium features lock, but Just Notes keeps existing pad data. Settings &gt; Data offers Safety Export All Data whenever locked pads contain data.</dd>
+      </dl>
+
+      <h2>Contact us</h2>
+      <p>
+        Email <a href={emailLink('Just Notes support request')}>{company.email}</a> and include your macOS version and Just Notes version.
+      </p>
+      <p><a href="/just-notes/privacy/">Privacy Policy</a></p>
+    </article>
+  </div>
+</Layout>

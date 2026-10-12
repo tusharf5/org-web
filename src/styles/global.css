@@ -763,6 +763,58 @@
     font-size: 13px;
     color: var(--muted);
   }
+
+  .doc {
+    max-width: 680px;
+    margin-inline: auto;
+    padding: 64px 0 96px;
+  }
+
+  .doc h1 {
+    margin-top: 20px;
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    line-height: 1.1;
+    letter-spacing: -0.05em;
+  }
+
+  .doc h2 {
+    margin-top: 48px;
+    font-size: 1.4rem;
+    letter-spacing: -0.03em;
+  }
+
+  .doc p {
+    margin-top: 20px;
+    font-size: 17px;
+    line-height: 1.65;
+  }
+
+  .doc .doc-meta {
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .doc a {
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+
+  .faq {
+    margin-top: 8px;
+  }
+
+  .faq dt {
+    margin-top: 28px;
+    font-size: 17px;
+    font-weight: 500;
+  }
+
+  .faq dd {
+    margin-top: 6px;
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--muted);
+  }
 }
 
 @layer responsive {

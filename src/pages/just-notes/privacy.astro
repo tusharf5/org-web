@@ -1,0 +1,37 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { company, emailLink } from '../../data/company';
+---
+
+<Layout
+  title={`Just Notes Privacy Policy — ${company.legalName}`}
+  description="How Just Notes, the menu-bar scratchpad for Mac, handles your notes, iCloud sync, and purchases."
+>
+  <div class="doc-page container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span aria-hidden="true">/</span><a href="/just-notes/support/">Just Notes</a><span aria-hidden="true">/</span><span aria-current="page">Privacy</span>
+    </nav>
+    <article class="doc">
+      <p class="eyebrow">Just Notes for Mac</p>
+      <h1>Privacy Policy</h1>
+      <p class="doc-meta">Last updated: October 13, 2026</p>
+
+      <p>
+        Just Notes does not track you, serve advertisements, create an account, or collect analytics, diagnostics, or personal data for the developer.
+      </p>
+      <p>
+        Your notes, recovery versions, preferences, and image attachments are stored on your Mac. If you purchase the lifetime unlock and explicitly enable iCloud sync, note revisions and managed image attachments are also stored in your private iCloud database so they can sync between Macs signed in to your Apple Account. The developer cannot read that private database. iCloud sync is off by default and can be turned off at any time without deleting the local copy.
+      </p>
+      <p>
+        Purchases are processed by Apple through the Mac App Store. Just Notes receives only the signed transaction information needed to verify, restore, refund, or revoke the lifetime unlock; it does not receive your payment-card details.
+      </p>
+      <p>
+        Import and export happen only after you choose files or folders using the macOS file picker. Just Notes does not upload exported files or download remote Markdown images.
+      </p>
+      <p>
+        For privacy questions, contact <a href={emailLink('Just Notes privacy question')}>{company.email}</a>.
+      </p>
+      <p class="doc-meta">Just Notes is published by {company.legalName}, {company.location}.</p>
+    </article>
+  </div>
+</Layout>
